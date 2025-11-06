@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brainrots Italianos — 2048-style</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <header class="header">
+      <div>
+        <h1>Brainrots Italianos</h1>
+        <p class="subtitle">Uma releitura delirante do clássico 2048 – deslize, combine e sobreviva ao caos.</p>
+      </div>
+      <div class="scoreboard" aria-live="polite">
+        <div class="score-box" data-label="Pontuação">
+          <span class="score" id="score">0</span>
+        </div>
+        <div class="score-box" data-label="Recorde">
+          <span class="score" id="best">0</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-text">
+            <h2>Combinações</h2>
+            <p>Use as setas do teclado (ou WASD) para mover os tiles. Cada fusão evoca mais um brainrot italiano.</p>
+          </div>
+          <div class="panel-actions">
+            <button id="new-game" type="button">Novo delírio</button>
+          </div>
+        </div>
+
+        <section class="grid" aria-label="Tabuleiro 2048" role="application">
+          <div class="grid-inner" id="grid" aria-live="polite"></div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="panel info">
+          <h3>Como jogar</h3>
+          <ul>
+            <li>Deslize os tiles para juntar brainrots iguais.</li>
+            <li>Depois de cada jogada aparece um novo delírio (2 ou 4).</li>
+            <li>Planeje os movimentos – quando não houver jogadas, acabou.</li>
+            <li>Chegue ao <strong>2048</strong> para coroar o brainrot supremo.</li>
+          </ul>
+        </div>
+        <div class="panel info">
+          <h3>Controles adicionais</h3>
+          <ul>
+            <li><kbd>WASD</kbd> ou <kbd>↑↓←→</kbd></li>
+            <li>Toque e arraste no celular</li>
+            <li>Pressione <kbd>N</kbd> para começar de novo</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>Feito para quem acorda no loop de TikToks em italiano e precisa transformar isso em energia cinética.</p>
+    </footer>
+  </div>
+
+  <dialog id="modal" class="modal">
+    <form method="dialog" class="modal-content">
+      <h2 id="modal-title"></h2>
+      <p id="modal-message"></p>
+      <button value="close" class="modal-close">Continuar</button>
+    </form>
+  </dialog>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
